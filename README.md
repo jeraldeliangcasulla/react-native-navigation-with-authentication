@@ -17,33 +17,36 @@ This project demonstrates a simple authentication flow using **React Navigation*
   - `CommonActions.reset` used to replace authentication stack with main app
   - Navigation state persists across authentication changes
 
-## Project Structure
+## Project Structure & Flow
 
-````mermaid
-graph TD;
-    A[app/] --> B[navigations/]
-    B --> B1[RootNavigator.tsx - Defines RootStack: AuthStack & MainTabs]
-    B --> B2[AuthStack.tsx - Handles authentication navigation]
-    B --> B3[MainTabs.tsx - Bottom tab navigation for main app]
+### 1. App Initialization
 
-    A --> C[screens/]
-    C --> C1[InitScreen.tsx - Initial loading screen]
+- `App.tsx` is the entry point of the application.
+- It initializes the navigation system using `RootNavigator.tsx`.
 
-    C --> C2[auth/ - Authentication screens]
-    C2 --> C2A[WelcomeScreen.tsx - Welcome screen]
-    C2 --> C2B[LoginScreen.tsx - Login screen]
-    C2 --> C2C[SignupScreen.tsx - Signup screen]
+### 2. Navigation Setup
 
-    C --> C3[main/ - Main application screens]
-    C3 --> C3A[ProfileScreen.tsx - User profile]
-    C3 --> C3B[DashboardScreen.tsx - Main dashboard]
+- **RootNavigator.tsx** manages the top-level navigation.
+  - If the user is **not authenticated**, it loads `AuthStack.tsx`.
+  - If the user is **authenticated**, it loads `MainTabs.tsx`.
 
-    A --> D[context/ - Global state management]
-    D --> D1[AuthContext.tsx - Provides auth state & actions]
+### 3. Authentication Flow
 
-    A --> E[App.tsx - Entry point, initializes navigation]
+- **AuthStack.tsx** contains:
+  - `WelcomeScreen.tsx` → Shown before login/signup.
+  - `LoginScreen.tsx` → Allows users to log in.
+  - `SignupScreen.tsx` → Allows users to register.
 
+### 4. Main Application Flow
 
+- **MainTabs.tsx** contains the main app screens:
+  - `DashboardScreen.tsx` → Displays the main dashboard.
+  - `ProfileScreen.tsx` → Shows the user's profile.
+
+### 5. State Management
+
+- `AuthContext.tsx` manages the authentication state.
+- The app can use any state management library, but it initializes with React Context API for demonstration purposes.
 
 ## Authentication Flow
 
@@ -58,7 +61,9 @@ graph TD;
       routes: [{ name: "MainTabs" }],
     })
   );
-````
+  ```
+
+```
 
 ## Customizing State Management
 
@@ -74,3 +79,4 @@ Feel free to fork and contribute to this project!
 ## License
 
 This project is licensed under the MIT License.
+```
