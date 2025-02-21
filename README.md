@@ -22,26 +22,27 @@ This project demonstrates a simple authentication flow using **React Navigation*
 ````mermaid
 graph TD;
     A[app/] --> B[navigations/]
-    B --> B1[RootNavigator.tsx - Defines RootStack (AuthStack & MainTabs)]
-    B --> B2[AuthStack.tsx - Authentication stack (Login/Register)]
-    B --> B3[MainTabs.tsx - Main app bottom tabs]
+    B --> B1[RootNavigator.tsx - Defines RootStack: AuthStack & MainTabs]
+    B --> B2[AuthStack.tsx - Handles authentication navigation]
+    B --> B3[MainTabs.tsx - Bottom tab navigation for main app]
 
     A --> C[screens/]
     C --> C1[InitScreen.tsx - Initial loading screen]
 
     C --> C2[auth/ - Authentication screens]
-    C2 --> C2A[WelcomeScreen.tsx - Welcome screen before login/signup]
-    C2 --> C2B[LoginScreen.tsx - User login screen]
-    C2 --> C2C[SignupScreen.tsx - User registration screen]
+    C2 --> C2A[WelcomeScreen.tsx - Welcome screen]
+    C2 --> C2B[LoginScreen.tsx - Login screen]
+    C2 --> C2C[SignupScreen.tsx - Signup screen]
 
     C --> C3[main/ - Main application screens]
-    C3 --> C3A[ProfileScreen.tsx - User profile screen]
-    C3 --> C3B[DashboardScreen.tsx - Main dashboard/home screen]
+    C3 --> C3A[ProfileScreen.tsx - User profile]
+    C3 --> C3B[DashboardScreen.tsx - Main dashboard]
 
     A --> D[context/ - Global state management]
-    D --> D1[AuthContext.tsx - Provides authentication state & actions]
+    D --> D1[AuthContext.tsx - Provides auth state & actions]
 
     A --> E[App.tsx - Entry point, initializes navigation]
+
 
 
 ## Authentication Flow
