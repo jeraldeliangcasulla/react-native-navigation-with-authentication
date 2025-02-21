@@ -19,26 +19,29 @@ This project demonstrates a simple authentication flow using **React Navigation*
 
 ## Project Structure
 
-📂 app/
- ├── 📂 navigations/        # Navigation setup for the app
- │   ├── RootNavigator.tsx  # Defines RootStack (includes AuthStack & MainTabs)
- │   ├── AuthStack.tsx      # Stack navigator for authentication (Login/Register)
- │   ├── MainTabs.tsx       # Bottom tab navigator for the main app
- │
- ├── 📂 screens/            # Contains all screen components
- │   ├── InitScreen.tsx     # Initial loading screen (e.g., checking auth state)
- │   ├── 📂 auth/           # Authentication-related screens
- │   │   ├── WelcomeScreen.tsx  # Welcome screen before login/signup
- │   │   ├── LoginScreen.tsx    # User login screen
- │   │   ├── SignupScreen.tsx   # User registration screen
- │   ├── 📂 main/           # Main application screens
- │   │   ├── ProfileScreen.tsx   # User profile screen
- │   │   ├── DashboardScreen.tsx # Main dashboard/home screen
- │
- ├── 📂 context/            # Global state management (Auth Context API)
- │   ├── AuthContext.tsx    # Provides authentication state & actions
- │
- ├── App.tsx                # Entry point of the app, initializes navigation
+````mermaid
+graph TD;
+    A[app/] --> B[navigations/]
+    B --> B1[RootNavigator.tsx - Defines RootStack (AuthStack & MainTabs)]
+    B --> B2[AuthStack.tsx - Authentication stack (Login/Register)]
+    B --> B3[MainTabs.tsx - Main app bottom tabs]
+
+    A --> C[screens/]
+    C --> C1[InitScreen.tsx - Initial loading screen]
+
+    C --> C2[auth/ - Authentication screens]
+    C2 --> C2A[WelcomeScreen.tsx - Welcome screen before login/signup]
+    C2 --> C2B[LoginScreen.tsx - User login screen]
+    C2 --> C2C[SignupScreen.tsx - User registration screen]
+
+    C --> C3[main/ - Main application screens]
+    C3 --> C3A[ProfileScreen.tsx - User profile screen]
+    C3 --> C3B[DashboardScreen.tsx - Main dashboard/home screen]
+
+    A --> D[context/ - Global state management]
+    D --> D1[AuthContext.tsx - Provides authentication state & actions]
+
+    A --> E[App.tsx - Entry point, initializes navigation]
 
 
 ## Authentication Flow
@@ -54,7 +57,7 @@ This project demonstrates a simple authentication flow using **React Navigation*
       routes: [{ name: "MainTabs" }],
     })
   );
-  ```
+````
 
 ## Customizing State Management
 
