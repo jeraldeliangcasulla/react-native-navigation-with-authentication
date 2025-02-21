@@ -1,4 +1,4 @@
-# React Native Authentication with Navigation
+# React Native Navigation with Authentication
 
 This project demonstrates a simple authentication flow using **React Navigation** with **Native Stack and Tabs** in a React Native app. It uses **Context API** for state management but can be replaced with other state management libraries like Redux, Zustand, or Recoil.
 
@@ -63,8 +63,6 @@ This project demonstrates a simple authentication flow using **React Navigation*
   );
   ```
 
-```
-
 ## Customizing State Management
 
 If you prefer Redux, Zustand, or Recoil instead of Context API:
@@ -79,4 +77,3 @@ Feel free to fork and contribute to this project!
 ## License
 
 This project is licensed under the MIT License.
-```
