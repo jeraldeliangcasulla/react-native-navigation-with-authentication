@@ -19,22 +19,27 @@ This project demonstrates a simple authentication flow using **React Navigation*
 
 ## Project Structure
 
-```
 📂 app/
- ├── 📂 navigations/        # Contains stack and tab navigators
- │   ├── RootNavigator.tsx # Defines RootStack (AuthStack & MainTabs)
- │   ├── AuthStack.tsx     # Login/Register stack
- │   ├── MainTabs.tsx      # Main app tabs
+ ├── 📂 navigations/        # Navigation setup for the app
+ │   ├── RootNavigator.tsx  # Defines RootStack (includes AuthStack & MainTabs)
+ │   ├── AuthStack.tsx      # Stack navigator for authentication (Login/Register)
+ │   ├── MainTabs.tsx       # Bottom tab navigator for the main app
  │
- ├── 📂 screens/           # Screens for authentication & main app
- │   ├── LoginScreen.tsx   # Authentication screen
- │   ├── HomeScreen.tsx    # Main screen after login
+ ├── 📂 screens/            # Contains all screen components
+ │   ├── InitScreen.tsx     # Initial loading screen (e.g., checking auth state)
+ │   ├── 📂 auth/           # Authentication-related screens
+ │   │   ├── WelcomeScreen.tsx  # Welcome screen before login/signup
+ │   │   ├── LoginScreen.tsx    # User login screen
+ │   │   ├── SignupScreen.tsx   # User registration screen
+ │   ├── 📂 main/           # Main application screens
+ │   │   ├── ProfileScreen.tsx   # User profile screen
+ │   │   ├── DashboardScreen.tsx # Main dashboard/home screen
  │
- ├── 📂 context/           # Authentication context
- │   ├── AuthContext.tsx   # Handles login state
+ ├── 📂 context/            # Global state management (Auth Context API)
+ │   ├── AuthContext.tsx    # Provides authentication state & actions
  │
- ├── App.tsx               # Entry point
-```
+ ├── App.tsx                # Entry point of the app, initializes navigation
+
 
 ## Authentication Flow
 
