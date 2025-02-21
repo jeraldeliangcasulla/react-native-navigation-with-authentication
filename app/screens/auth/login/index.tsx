@@ -1,10 +1,10 @@
+import PageLayout from "@components/PageLayout";
+import { useLocalContext } from "@context/index";
+import { AuthStackParamList } from "@navigations/AuthStackNavigation";
+import { RootStackParamList } from "@navigations/RootStackNavigation";
+import { CommonActions } from "@react-navigation/native";
 import { StackScreenProps } from "@react-navigation/stack";
 import { Button, Text } from "react-native";
-import { AuthStackParamList } from "../../../navigations/AuthStackNavigation";
-import PageLayout from "../../../components/PageLayout";
-import { useLocalContext } from "../../../context";
-import { CommonActions } from "@react-navigation/native";
-import { RootStackParamList } from "../../../navigations/RootStackNavigation";
 
 export default function LoginScreen({
   navigation,

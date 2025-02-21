@@ -1,6 +1,6 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import DashboardScreen from "../screens/main/dashboard";
-import ProfileScreen from "../screens/main/profile";
+import DashboardScreen from "@screens/main/dashboard";
+import ProfileScreen from "@screens/main/profile";
 
 export type MainTabsParamList = {
   Dashboard: undefined;

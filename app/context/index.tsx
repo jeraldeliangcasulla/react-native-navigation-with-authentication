@@ -4,20 +4,19 @@ type LocalContextType = {
   isAuthenticated: boolean;
   login: () => void;
   signup: () => void;
+  logout: () => void;
 };
 
 const LocalContext = createContext<LocalContextType | undefined>(undefined);
 
 export function LocalProvider({ children }: { children: ReactNode }) {
   const [isAuthenticated, setAuthenticated] = useState<boolean>(false);
-  const login = () => {
-    console.log(isAuthenticated);
 
-    setAuthenticated((_) => !_);
-  };
+  const login = () => setAuthenticated(true);
   const signup = () => setAuthenticated(true);
+  const logout = () => setAuthenticated(false);
 
-  const values = { isAuthenticated, login, signup };
+  const values = { isAuthenticated, login, signup, logout };
 
   return (
     <LocalContext.Provider value={values}>{children}</LocalContext.Provider>

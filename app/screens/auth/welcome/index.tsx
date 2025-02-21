@@ -1,7 +1,7 @@
+import PageLayout from "@components/PageLayout";
+import { AuthStackParamList } from "@navigations/AuthStackNavigation";
 import { StackScreenProps } from "@react-navigation/stack";
 import { Button, Text } from "react-native";
-import PageLayout from "../../../components/PageLayout";
-import { AuthStackParamList } from "../../../navigations/AuthStackNavigation";
 
 export default function WelcomeScreen({
   navigation,

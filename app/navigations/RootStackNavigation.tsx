@@ -1,7 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import InitScreen from "@screens/init";
 import AuthStackNavigation from "./AuthStackNavigation";
-import InitScreen from "../screens/init";
 import MainTabsNavigation from "./MainTabsNavigation";
 
 export type RootStackParamList = {

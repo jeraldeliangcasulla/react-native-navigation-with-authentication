@@ -1,5 +1,5 @@
-import { LocalProvider } from "./app/context";
-import RootNavigation from "./app/navigations/RootStackNavigation";
+import { LocalProvider } from "@context/index";
+import RootNavigation from "@navigations/RootStackNavigation";
 
 export default function App() {
   return (
